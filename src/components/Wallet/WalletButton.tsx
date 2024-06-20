@@ -17,7 +17,7 @@ const WalletButton = () => {
     InnerMenu={InnerMenu}
     icon=""
     iconClass=""
-    balance={1000}
+    // balance={1000}
   />
 </div>
 
