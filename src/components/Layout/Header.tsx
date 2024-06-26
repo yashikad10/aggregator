@@ -11,29 +11,11 @@ const Header = () => {
   };
 
   return (
-    <header className=" text-white p-2 border-b border-gray-700">
+    <header className=" text-white p-2 border-b border-gray-700 h-20">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-[#4d55c7]">
-          Aggregator
+        <Link href="/" className="text-2xl p-2 font-bold bg-gradient-to-r from-[#2C74B3] to-[#205295] text-transparent bg-clip-text text-center">
+          Rune Marketplace
         </Link>
-        <nav className="flex-1">
-          <ul className="flex justify-center space-x-8 ">
-            <li className="hover:text-[#4d55c7]">
-              <Link href="/collections" onClick={toggleDropdown}>
-                Collections
-              </Link>
-            </li>
-            <li className="hover:text-[#4d55c7]">
-              <Link href="/marketplace">Marketplace</Link>
-            </li>
-            <li className="hover:text-[#4d55c7]">
-              <Link href="/staking">Staking</Link>
-            </li>
-            <li className="hover:text-[#4d55c7]">
-              <Link href="/launchpad">Launchpad</Link>
-            </li>
-          </ul>
-        </nav>
         <WalletButton />
       </div>
     </header>

@@ -3,6 +3,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { WalletProvider } from "bitcoin-wallet-adapter";
+import { Provider } from "react-redux";
+import { store } from "@/stores";
 import Header from "@/components/Layout/Header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,14 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <WalletProvider customAuthOptions={{ network: "testnet" }}>
+    <Provider store={store}>
+      <WalletProvider >
       <html lang="en">
         <body className={inter.className}>
-        
-          <Header />
+        <Header />
           {children}
         </body>
       </html>
     </WalletProvider>
+    </Provider>
   );
 }

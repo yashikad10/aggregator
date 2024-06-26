@@ -1,5 +1,5 @@
 {
-  "name": "aggregator",
+  "name": "runes-marketplace",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,20 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.15.20",
-    "@reduxjs/toolkit": "^2.2.5",
+    "@bitcoinerlab/secp256k1": "^1.1.1",
+    "axios": "^1.7.2",
     "bitcoin-wallet-adapter": "^1.6.1",
-    "mongoose": "^8.4.1",
+    "bitcoinjs-lib": "^6.1.6",
+    "copy-to-clipboard": "^3.3.3",
+    "mixpanel-browser": "^2.52.0",
+    "mongoose": "^8.4.3",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-redux": "8.0.5",
     "react-router-dom": "^6.23.1",
-    "redux": "^5.0.1"
+    "redux-thunk": "^3.1.0",
+    "socket.io-client": "^4.7.5",
+    "tiny-secp256k1": "^2.2.3"
   },
   "devDependencies": {
+    "@types/mixpanel-browser": "^2.49.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

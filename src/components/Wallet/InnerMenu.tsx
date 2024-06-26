@@ -1,12 +1,17 @@
 import React from "react";
 import { Popover } from "@mui/material";
-import { useWalletAddress} from "bitcoin-wallet-adapter";
-import { FaCopy, FaDiscord, FaPowerOff, FaBitcoin ,FaCircle,FaRegCircle} from "react-icons/fa";
+import { useWalletAddress } from "bitcoin-wallet-adapter";
+import {
+  FaCopy,
+  FaDiscord,
+  FaPowerOff,
+  FaBitcoin,
+  FaCircle,
+} from "react-icons/fa";
 
-const InnerMenu  = ({open, onClose, disconnect }:any) => {
+const InnerMenu = ({ open, onClose, disconnect }: any) => {
 
   const walletDetails = useWalletAddress();
-
   if (!walletDetails) return null;
 
   const copyToClipboard = (text: string) => {
@@ -20,7 +25,7 @@ const InnerMenu  = ({open, onClose, disconnect }:any) => {
     const lastPart = address.slice(-truncatedLength);
     return `${firstPart}...${lastPart}`;
   };
-  
+
   return (
     <Popover
       anchorOrigin={{
@@ -41,35 +46,39 @@ const InnerMenu  = ({open, onClose, disconnect }:any) => {
           </p>
         </div>
         <div className="mb-4 ">
-        <div className="flex items-center">
-        <FaBitcoin className="mr-2 text-3xl mt-2" />
+          <div className="flex items-center">
+            <FaBitcoin className="mr-2 text-3xl mt-2" />
             <p className="text-lg font-semibold">BTC Wallet</p>
-            </div>
+          </div>
           <div className="flex items-center mb-2 ml-9">
-          <p className="text-sm">
-            {truncateAddress(walletDetails.cardinal_address)}
-          </p>
+            <p className="text-sm">
+              {truncateAddress(walletDetails.cardinal_address)}
+            </p>
 
-          <FaCopy
+            <FaCopy
               className="cursor-pointer ml-2"
-              onClick={() => copyToClipboard(walletDetails.cardinal_address || '')}
+              onClick={() =>
+                copyToClipboard(walletDetails.cardinal_address || "")
+              }
             />
-            </div>
+          </div>
         </div>
         <div className="mb-4 ">
-        <div className="flex items-center">
-        <div className="mr-2">
-      <FaCircle className="text-white text-3xl" /> 
-    </div> 
-            <p className="text-lg font-semibold">Ordinals Wallet</p>
+          <div className="flex items-center">
+            <div className="mr-2">
+              <FaCircle className="text-white text-3xl" />
             </div>
-            <div className="flex items-center mb-2 ml-10">  
-          <p className="text-sm">
-            {truncateAddress(walletDetails.ordinal_address)}
-          </p>
-          <FaCopy
+            <p className="text-lg font-semibold">Ordinals Wallet</p>
+          </div>
+          <div className="flex items-center mb-2 ml-10">
+            <p className="text-sm">
+              {truncateAddress(walletDetails.ordinal_address)}
+            </p>
+            <FaCopy
               className="cursor-pointer ml-2"
-              onClick={() => copyToClipboard(walletDetails.ordinal_address || '')}
+              onClick={() =>
+                copyToClipboard(walletDetails.ordinal_address || "")
+              }
             />
           </div>
         </div>

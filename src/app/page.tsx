@@ -1,10 +1,8 @@
-"use client"
-import WalletButton from "@/components/Wallet/WalletButton";
-
+"use client";
 export default function Home() {
   return (
     <div>
-      {/* <WalletButton/> */}
+      <h1 className="text-2xl text-white">Runes Marketplace</h1>
     </div>
   );
 }
